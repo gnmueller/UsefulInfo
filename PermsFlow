@@ -20,5 +20,4 @@ directory?	   \					 the group? <						 No->They cannot access
 																		  \
 																		   No->They cannot access
 																			   the file in question.
-				
 }
