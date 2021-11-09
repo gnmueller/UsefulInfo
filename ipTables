@@ -1,17 +1,17 @@
 Writing and Reading IPTABLES:
 {
 iptables -t <table> -A <chain> -p <tcp,udp,icmp> --sport <sourceport> --dport <destport> -m state --state <established,related,new,invalid> -s <sourceip/subnet> -d <destip/subnet> -j <accept,drop>
-	-t <table>				= Choose which table to modify rules on. Default is Filter. Can be #Filter, NAT, Mangle, Raw, or Security
-	-A <chain>				= Append a rule to the specified chain,
+	-t <table>			= Choose which table to modify rules on. Default is Filter. Can be #Filter, NAT, Mangle, Raw, or Security
+	-A <chain>			= Append a rule to the specified chain,
 	-p <tcp,udp,icmp>		= Choose a protocol to match
-		--sport <sourceport>= Must follow the protocol match, choose a source port to match
+		--sport <sourceport>	= Must follow the protocol match, choose a source port to match
 		--dport <destport>	= Must follow the protocol match, choose a destination port to match
-	-m state				= Use extended matching -m, to match states
+	-m state			= Use extended matching -m, to match states
 		--state <established,related,new,invalid> = Must follow -m state, choose states to match.
-	-s <sourceip/subnet>	= Choose a source IP or subnet to match
+	-s <sourceip/subnet>		= Choose a source IP or subnet to match
 	-d <destip/subnet>		= Choose a destination IP or subnet to match
-	-j <accept,drop,chain>	= Choose whether to accept, drop, or send to another chain for further processing
-	\!						= Match packets that DO NOT match the following rule
+	-j <accept,drop,chain>		= Choose whether to accept, drop, or send to another chain for further processing
+	\!				= Match packets that DO NOT match the following rule
 	
 	Tables:
 		Filter & Mangle:
